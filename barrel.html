@@ -3,35 +3,37 @@
 <br>
 <body>
 
+    
     <video id="videoPlayer" width="540" height="360" controls>
         <source id="videoSource" src="" type="video/mp4">
         あなたのブラウザは video タグをサポートしていません。
     </video>
 
+    
     <button onclick="playRandomVideo()">Start the quiz</button>
 
     <script>
         function playRandomVideo() {
-            // Google Drive の動画リンクを変換した URL を配列に格納
+            
             const videos = [
-                "https://drive.google.com/uc?export=view&id=1ToLQ9cbPbzOlSMzayK4af6B2PsZAjBUb",
-                "https://drive.google.com/uc?export=view&id=1UpYebx191ZmpsIJpPfQUUmPwt22Jq-Tl",
-                "https://drive.google.com/uc?export=view&id=1WPZWgwrx9GfcpqGiFF4JYfH9J5qesknT",
-                "https://drive.google.com/uc?export=view&id=1IKZTLEMuFKm2aMFunnMN-dEyvWxXWZ_f",
-                "https://drive.google.com/uc?export=view&id=1fU3CWu536ENbJU9C0spvmk6M-evgNC_c"
+                "barrel/delay.mp4",
+                "barrel/front.mp4",
+                "barrel/log.mp4",
+                "barrel/std.mp4",
+                "barrel/ya.mp4"
             ];
 
-            // ランダムにインデックスを選択
+            
             const randomIndex = Math.floor(Math.random() * videos.length);
 
-            // videoPlayer と videoSource を取得
+            
             const videoPlayer = document.getElementById('videoPlayer');
             const videoSource = document.getElementById('videoSource');
 
-            // ランダムに選ばれた動画のリンクを videoSource に設定
+            
             videoSource.src = videos[randomIndex];
 
-            // 動画を再読み込みして再生
+            
             videoPlayer.load();
             videoPlayer.play();
         }
@@ -39,3 +41,5 @@
 
 </body>
 </html>
+
+
